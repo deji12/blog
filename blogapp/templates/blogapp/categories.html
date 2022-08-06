@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gridy Blog</title>
+
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.css" integrity="sha512-m3pAvNriL711NMlhkZHK6K4Tu2/RjtrzyjxZU8mlAbxxoDoURy27KajN1LGTLeEEPvaN12mKAgSCrYEwF9y0jA==" crossorigin="anonymous" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <!-- Header -->
+    {% include 'blogapp/nav.html' %}
+    <!-- .Header -->
+
+    <!-- Main Site -->
+       <main id="site-main">
+
+            <!-- Post Content -->
+                <section class="container">
+
+                    <!-- post footer -->
+                    <div class="post-footer mb-3">
+                        <div class="post-tags d-flex flex-wrap justify-content-center">
+                            <a href="#" class="nav-link btn bg-light">Travel</a>
+                            <a href="#" class="nav-link btn bg-light">Food</a>
+                            <a href="#" class="nav-link btn bg-light">Lifestyle</a>
+                            <a href="#" class="nav-link btn bg-light">Techonogy</a>
+                            <a href="#" class="nav-link btn bg-light">Fashion</a>
+                        </div>
+
+                    </div>
+                    <!-- .post footer -->
+
+                </section>
+            <!-- .Post Content -->
+
+            <!-- Swiper slider -->
+                <section class="slider">
+                    <div class="container">
+
+                        <!-- Slider main container -->
+                            <div class="swiper-container">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img1.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                     <!-- Slides -->
+                                      <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img2.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                     <!-- Slides -->
+                                      <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img3.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                        <!-- Slides -->
+                                             <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img4.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                        <!-- Slides -->
+                                        <div class="swiper-slide">
+                                            <a href="#">
+                                                <img src="./assets/slider/img5.jpg" class="img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                            <!-- Slides -->
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <img src="./assets/slider/img6.jpg" class="img-fluid" alt="">
+                                                </a>
+                                            </div>
+                                                <!-- Slides -->
+                                                <div class="swiper-slide">
+                                                    <a href="#">
+                                                        <img src="./assets/slider/img7.jpg" class="img-fluid" alt="">
+                                                    </a>
+                                                </div>
+                                                    <!-- Slides -->
+
+                                </div>
+                            </div>
+
+                    </div>
+                </section>
+             <!-- .Swiper slider -->
+
+       </main>
+    <!-- .Main Site -->
+
+    <!-- footer -->
+    {% include 'blogapp/footer.html' %}
+    <!-- .footer -->
+
+
+    <!-- masonry libray for horizontal grid -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
+
+    <!-- swiper slider cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js" integrity="sha512-1LlEYE0qExJ/GUfAJ0k2K2fB5sIvMv/q6ueo3syohvQ3ElWDQVSMUOf39cxaDWHtNu7M6lF6ZC1H6A1m3SvheA==" crossorigin="anonymous"></script>
+
+    <!-- custom javascript main.js file -->
+    <script src="main.js"></script>
+</body>
+</html>

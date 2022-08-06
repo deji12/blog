@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gridy Blog</title>
+
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.css" integrity="sha512-m3pAvNriL711NMlhkZHK6K4Tu2/RjtrzyjxZU8mlAbxxoDoURy27KajN1LGTLeEEPvaN12mKAgSCrYEwF9y0jA==" crossorigin="anonymous" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="https://res.cloudinary.com/dxojb4izx/raw/upload/v1655807548/blogtutorial/style_zjqoer.css">
+
+</head>
+<body>
+    
+    <!-- Header -->
+    {% include 'blogapp/nav.html' %}
+    <!-- .Header -->
+
+    <!-- Main Site -->
+       <main id="site-main">
+
+            <!-- Post Content -->
+                <section class="container">
+                    <article id="post">
+                        <!-- article heading -->
+                        <div class="headings text-center">
+                            <!-- <div class="category">
+                                <a href="#" class="nav-link">Travel</a>
+                            </div> -->
+
+                            <div class="title">
+                                <h2 class="text-title text-dark display-1">{{post.title}}</h2>
+                            </div>
+
+                            <div class="meta">
+                                <a href="#" class="link display-2 text-secondary px-1">
+                                    <i class="fas fa-user text-primary"></i> {{post.author}}
+                                </a>
+                                <a href="#" class="link display-2 text-secondary px-1">
+                                    <i class="fas fa-clock text-primary"></i>  {{post.date}}
+                                </a>
+                                <a href="#" class="link display-2 text-secondary px-1">
+                                    <i class="fas fa-comments text-primary"></i> 12
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- thumbnail  -->
+                        <div class="thumbnail mt-3">
+                            <img src="{{post.image.url}}" class="thumbnail" alt="">
+                        </div>
+
+                        <!-- content -->
+                        <div class="content text-dark display-2 secondary-title mt-3">
+                            <p>{{post.body}}
+                            </p>
+                            
+                        </div>
+                    </article>
+
+                    <!-- post footer -->
+                    <div class="post-footer mb-3">
+                        <div class="post-tags d-flex flex-wrap justify-content-center">
+                            <a href="#" class="nav-link btn bg-light">{{category1}}</a>
+                            <a href="#" class="nav-link btn bg-light">{{category2}}</a>
+                        </div>
+
+                        <div class="post-author text-center">
+                            <div class="author-avatar">
+                                <img src="./assets/face/face1.jpg" class="rounded" alt="">
+                            </div>
+
+                            <div class="author-info py-2">
+                                <h3 class="text-dark">John Stephens</h3>
+
+                                <p class="text-secondary secondary-title">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                    Recusandae, sequi! In harum laborum ipsa voluptatibus doloremque nulla, tempore aut veritatis.
+                                </p>
+
+                                <div class="post-tags d-flex flex-wrap justify-content-center">
+                                    <a href="#" class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="nav-link"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="nav-link"><i class="fab fa-dribbble"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- post related -->
+
+                        <div class="post-comments py-2">
+                            <h3 class="text-center display-1 secondary-title py-2">{{number_of_comments}} Comments</h3>
+    
+                            <div class="comment-details">
+                                {% for i in comments %}
+                                <div class="comment-item py-2">
+                                    <div class="d-flex">
+                                        <div class="avatar px-2">
+                                            <img src="https://res.cloudinary.com/dxojb4izx/image/upload/v1651345375/farm/assets/images/anonymous-user_ygfw4t.png" class="rounded" alt="">
+                                        </div>
+                                        <div class="comment-content">
+                                            <h5 class="display-2 m-0">{{i.name}}</h5>
+                                            <p class="title-secondary text-dark">
+                                                {{i.body}}
+                                            </p>
+                                        </div>
+                                    </div>   
+                                 {% endfor %}   
+                            </div>
+    
+                            <h3 class="text-center display-1 secondary-title py-2">Leave Comment</h3>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <h3 class="text-center display-1 secondary-title py-2">{{message}}</h3>
+                                {% endfor %}
+                            {% endif %}
+    
+                            <div class="comment-form">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="d-flex justify-content-between flex-wrap">
+                                        <input type="text" class="form-control " name="name" placeholder="Name" required>
+                                    </div>
+                                    <textarea class="form-control mt-3" placeholder="Message" name="body" rows="10" required></textarea>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary display-2 text-light mt-2">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- .post footer -->
+
+                </section>
+            <!-- .Post Content -->
+
+            <!-- Swiper slider -->
+                <section class="slider">
+                    <div class="container">
+
+                        <!-- Slider main container -->
+                            <div class="swiper-container">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img1.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                     <!-- Slides -->
+                                      <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img2.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                     <!-- Slides -->
+                                      <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img3.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                        <!-- Slides -->
+                                             <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img src="./assets/slider/img4.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                        <!-- Slides -->
+                                        <div class="swiper-slide">
+                                            <a href="#">
+                                                <img src="./assets/slider/img5.jpg" class="img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                            <!-- Slides -->
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <img src="./assets/slider/img6.jpg" class="img-fluid" alt="">
+                                                </a>
+                                            </div>
+                                                <!-- Slides -->
+                                                <div class="swiper-slide">
+                                                    <a href="#">
+                                                        <img src="./assets/slider/img7.jpg" class="img-fluid" alt="">
+                                                    </a>
+                                                </div>
+                                                    <!-- Slides -->
+
+                                </div>
+                            </div>
+
+                    </div>
+                </section>
+             <!-- .Swiper slider -->
+
+       </main>
+    <!-- .Main Site -->
+
+    <!-- footer -->
+    {% include 'blogapp/footer.html' %}
+    <!-- .footer -->
+
+
+    <!-- masonry libray for horizontal grid -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
+
+    <!-- swiper slider cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js" integrity="sha512-1LlEYE0qExJ/GUfAJ0k2K2fB5sIvMv/q6ueo3syohvQ3ElWDQVSMUOf39cxaDWHtNu7M6lF6ZC1H6A1m3SvheA==" crossorigin="anonymous"></script>
+
+    <!-- custom javascript main.js file -->
+    <script src="https://res.cloudinary.com/dxojb4izx/raw/upload/v1655807546/blogtutorial/main_w4vu5b.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<header id="header" class="shadow bg-light">
+    <nav class="container navbar">
+        <a href="{% url 'home' %}" class="nav-brand text-dark">
+             Gridy
+         </a>
+
+         <!-- toggle button -->
+         <button class="toggle-button">
+             <span><i class="fas fa-bars"></i></span>
+         </button>
+
+         <!-- collapse on toggle button click -->
+         <div class="collapse">
+             <ul class="navbar-nav">
+                 <a href="{% url 'home' %}" class="nav-link">Home</a>
+                 <a href="#" class="nav-link">All Post</a>
+                 <a href="#" class="nav-link">Categories</a>
+                 <a href="#" class="nav-link">About</a>
+                 <a href="#" class="nav-link">Contact</a>
+                 <a href="#" class="nav-link">Dashboard</a>
+             </ul>
+         </div>
+
+           <!-- collapse on toggle button click -->
+           <div class="collapse">
+               <ul class="navbar-nav">
+                     <div class="search-box">
+                         <a href="#" class="nav-link"><i class="fas fa-search"></i></a>
+                     </div>
+                     <a href="#" class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
+                     <a href="#" class="nav-link"><i class="fab fa-instagram"></i></a>
+                     <a href="#" class="nav-link"><i class="fab fa-dribbble"></i></a>
+               </ul>
+           </div>
+    </nav>
+</header>
